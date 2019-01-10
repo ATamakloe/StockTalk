@@ -1,0 +1,167 @@
+:root {
+  --main-green-color: rgba(102, 187, 106, 1);
+  --hover-color: rgb(62, 158, 212);
+  --title-font: 'Tinos', serif;
+  --sub-font: 'Open Sans', sans-serif;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.Search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.Search h2 {
+  align-self: flex-end;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  margin-top: 0;
+  font-family: var(--title-font);
+  font-size: 2.5em;
+}
+
+.Search h2>span {
+  color: var(--main-green-color)
+}
+
+.Search button {
+  background-color: var(--main-green-color);
+  height: 40px;
+  text-transform: capitalize;
+  color: white;
+  border: none;
+}
+
+.SearchBar {
+  margin-top: 1.5em;
+  width: 20vw;
+  padding: 1em;
+  height: 40px;
+}
+
+.StockBoxContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1.5em;
+  grid-auto-rows: 85vh;
+  justify-content: center;
+}
+
+.StockBox {
+  position: relative;
+  display: column;
+  min-height: 82vh;
+  width: 40vw;
+  text-align: center;
+  padding-right: .4em;
+  margin: 10px 10px 25px 10px;
+  box-shadow: 4px 4px 6px 2px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-family: var(--title-font);
+}
+
+.StockBox h2 {
+  width: 100%;
+}
+
+.StockBox:hover {
+  border: 2px solid var(--hover-color);
+}
+
+.Ticker {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+.Ticker span {
+  color: var(--main-green-color);
+}
+
+.close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  background-image: url(../imgs/close.png);
+  background-color: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.Chart {
+  height: 25vh;
+  margin-bottom: .5em;
+}
+
+.HeadlineBox {
+  padding: 0.5em;
+}
+
+.Headlines {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-right: 1.5em;
+  margin-bottom: 1.5em;
+  box-shadow: 4px 6px 4px -2px rgba(0, 0, 0, 0.4);
+  border-top: thin solid rgba(0, 0, 0, 0.4);
+  border-right: thin solid rgba(0, 0, 0, 0.4);
+  font-family: var(--sub-font);
+  text-decoration: none;
+  color: var(--hover-color);
+}
+
+.Headlines img {
+  height: 100%;
+  min-height: 78px;
+  width: 20%;
+  margin-right: 1.5em;
+}
+
+.Headlines:hover {
+  border: 2px solid var(--hover-color);
+}
+
+.TextAndCaption {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.TextAndCaption h3 {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 768px) {
+  .StockBoxContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .StockBox {
+    width: 90vw;
+    max-height: none;
+    margin-bottom: 2em;
+    align-self: center;
+    font-size: 8px;
+  }
+}
