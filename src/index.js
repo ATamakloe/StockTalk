@@ -12,7 +12,6 @@ const APIKEY = {
   NewsAPI: process.env.REACT_APP_NEWSAPIKEY
 };
 
-
 class App extends Component {
   state = {
     chartandnews: []
@@ -35,26 +34,29 @@ class App extends Component {
     let resultobj = {
       name: term,
       headlines: headlines.articles,
-      chartdata: chartdata["Note"] ? ["N/A"] : Object.entries(chartdata["Time Series (15min)"])
+      chartdata: chartdata["Note"]
+        ? ["N/A"]
+        : Object.entries(chartdata["Time Series (15min)"])
     };
 
     this.setState({chartandnews: this.state.chartandnews.concat(resultobj)})
   };
 
-  DeleteStockBox = (tickerName) => {this.setState({chartandnews:this.state.chartandnews.filter(stockobj => stockobj["name"] != tickerName)})};
-
+  DeleteStockBox = (tickerName) => {
+    this.setState({
+      chartandnews: this.state.chartandnews.filter(stockobj => stockobj["name"] != tickerName)
+    })
+  };
 
   render() {
-    return (
-    <div>
+    return (<div>
       <nav>
-      <SearchBar onSubmit={this.MakeApiCalls}/>
+        <SearchBar onSubmit={this.MakeApiCalls}/>
       </nav>
       <div className="StockBoxContainer">
-      {this.state.chartandnews.map((dataObj,i) => <StockBox key={i} name={dataObj.name} headlines={dataObj.headlines} chartdata={dataObj.chartdata} deleteStockBox={this.DeleteStockBox}/>)}
-    </div>
-  </div>
-)
+        {this.state.chartandnews.map((dataObj, i) => <StockBox key={i} name={dataObj.name} headlines={dataObj.headlines} chartdata={dataObj.chartdata} deleteStockBox={this.DeleteStockBox}/>)}
+      </div>
+    </div>)
   }
 }
 ReactDOM.render(<App/>, document.querySelector('#root'));
