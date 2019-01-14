@@ -9,8 +9,8 @@ body {
   display        : flex;
   position       : relative;
   min-height     : 100vh;
+  margin         : 0;
   flex-direction : column;
-  margin: 0;
 }
 
 a:active,
@@ -21,14 +21,19 @@ a:visited {
 }
 
 .Logo {
-  width: 100%;
-  margin: 0 0 0 0;
-  text-align: center;
-  background-color:rgba(241, 241, 241, 0.6);
+  width            : 100%;
+  margin           : 0 0 0 0;
+  background-color : rgba(241, 241, 241, 0.6);
+  text-align       : center;
 }
 
 .Logo span {
   color : var(--main-green-color);
+}
+
+input {
+  -webkit-appearance    : none;
+  -webkit-border-radius : 0;
 }
 
 footer {
@@ -47,14 +52,15 @@ footer {
 }
 
 nav > p {
-  visibility: hidden;
-  text-align: center;
+  visibility : hidden;
+  text-align : center;
 }
+
 .Search {
   display         : flex;
   width           : 100%;
+  flex-wrap       : wrap;
   justify-content : center;
-  flex-wrap: wrap;
 }
 
 .Search h2 {
@@ -80,7 +86,6 @@ nav > p {
   margin-top : 1.5em;
   padding    : 1em;
 }
-
 
 .StockBoxContainer {
   display               : grid;
@@ -161,7 +166,7 @@ nav > p {
 }
 
 .Headlines img {
-  min-width: 20%;
+  min-width    : 20%;
   min-height   : 70px;
   max-height   : 100px;
   margin-right : 1.5em;
@@ -191,19 +196,18 @@ nav > p {
 @media
   only screen
   and (max-width : 768px) {
-
   .SearchBar {
-      width      : 60vw;
-      height     : 40px;
-      margin-top : 1.5em;
-      padding    : 1em;
-    }
+    width      : 60vw;
+    height     : 40px;
+    margin-top : 1.5em;
+    padding    : 1em;
+  }
 
-    nav > p {
-      visibility: visible;
-      font-size: 0.7em;
-      color: rgb(101, 101, 101);
-    }
+  nav > p {
+    visibility : visible;
+    color      : rgb(101, 101, 101);
+    font-size  : 0.7em;
+  }
 
   .StockBoxContainer {
     display         : flex;
@@ -222,7 +226,6 @@ nav > p {
   }
 
   .Headlines {
-    font-size: 1.3em;
+    font-size : 1.3em;
   }
-
 }
