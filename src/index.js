@@ -39,7 +39,8 @@ class App extends Component {
         : Object.entries(chartdata["Time Series (15min)"])
     };
 
-    this.setState({chartandnews: this.state.chartandnews.concat(resultobj)})
+
+    this.setState({chartandnews: [resultobj].concat(this.state.chartandnews)})
   };
 
   DeleteStockBox = (tickerName) => {
@@ -52,6 +53,7 @@ class App extends Component {
     return (<div>
       <nav>
         <SearchBar onSubmit={this.MakeApiCalls}/>
+        <p>Try searching for FB (Facebook) or KO (Coca-Cola)</p>
       </nav>
       <div className="StockBoxContainer">
         {this.state.chartandnews.map((dataObj, i) => <StockBox key={i} name={dataObj.name} headlines={dataObj.headlines} chartdata={dataObj.chartdata} deleteStockBox={this.DeleteStockBox}/>)}

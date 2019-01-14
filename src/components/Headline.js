@@ -12,5 +12,3 @@ export const Headline = (props) => {
     </div>
   </a>)
 }
-
-//MAKE THIS INTO A SMALL CARD
