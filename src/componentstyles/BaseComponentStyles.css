@@ -6,11 +6,16 @@
 }
 
 body {
-  display        : flex;
-  position       : relative;
-  min-height     : 100vh;
-  margin         : 0;
-  flex-direction : column;
+  display               : -webkit-box;
+  display               : -ms-flexbox;
+  display               : flex;
+  -webkit-box-direction : normal;
+  -webkit-box-orient    : vertical;
+  position              : relative;
+  min-height            : 100vh;
+  margin                : 0;
+  -ms-flex-direction    : column;
+  flex-direction        : column;
 }
 
 a:active,
@@ -57,19 +62,21 @@ nav > p {
 }
 
 .Search {
-  display         : flex;
-  width           : 100%;
-  flex-wrap       : wrap;
-  justify-content : center;
+  display          : -webkit-box;
+  display          : -ms-flexbox;
+  display          : flex;
+  -webkit-box-pack : center;
+  width            : 100%;
+  -ms-flex-pack    : center;
+  -ms-flex-wrap    : wrap;
+  flex-wrap        : wrap;
+  justify-content  : center;
 }
 
 .Search h2 {
   margin-top    : 0;
   margin-bottom : 0px;
   padding-right : 10px;
-  align-self    : flex-end;
-  font-family   : var(--title-font);
-  font-size     : 2.5em;
 }
 
 .Search button {
@@ -89,6 +96,8 @@ nav > p {
 
 .StockBoxContainer {
   display               : grid;
+  -webkit-box-pack      : center;
+  -ms-flex-pack         : center;
   justify-content       : center;
   grid-auto-rows        : 85vh;
   grid-column-gap       : 1.5em;
@@ -96,16 +105,17 @@ nav > p {
 }
 
 .StockBox {
-  display       : column;
-  position      : relative;
-  width         : 40vw;
-  min-height    : 82vh;
-  margin        : 10px 10px 25px 10px;
-  padding-right : .4em;
-  box-shadow    : 4px 4px 6px 2px rgba(0, 0, 0, 0.4);
-  text-align    : center;
-  font-family   : var(--title-font);
-  font-size     : 14px;
+  display            : column;
+  position           : relative;
+  width              : 40vw;
+  min-height         : 82vh;
+  margin             : 10px 10px 25px 10px;
+  padding-right      : .4em;
+  -webkit-box-shadow : 4px 4px 6px 2px rgba(0, 0, 0, 0.4);
+  box-shadow         : 4px 4px 6px 2px rgba(0, 0, 0, 0.4);
+  text-align         : center;
+  font-family        : var(--title-font);
+  font-size          : 14px;
 }
 
 .StockBox h2 {
@@ -152,17 +162,23 @@ nav > p {
 }
 
 .Headlines {
-  display         : flex;
-  height          : 100%;
-  margin-bottom   : 1.5em;
-  padding-right   : 1.5em;
-  color           : var(--hover-color);
-  border-top      : thin solid rgba(0, 0, 0, 0.4);
-  border-right    : thin solid rgba(0, 0, 0, 0.4);
-  box-shadow      : 4px 6px 4px -2px rgba(0, 0, 0, 0.4);
-  text-decoration : none;
-  font-family     : var(--sub-font);
-  flex-direction  : row;
+  display               : -webkit-box;
+  display               : flex;
+  display               : -ms-flexbox;
+  -webkit-box-direction : normal;
+  -webkit-box-orient    : horizontal;
+  height                : 100%;
+  margin-bottom         : 1.5em;
+  padding-right         : 1.5em;
+  color                 : var(--hover-color);
+  border-top            : thin solid rgba(0, 0, 0, 0.4);
+  border-right          : thin solid rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow    : 4px 6px 4px -2px rgba(0, 0, 0, 0.4);
+  box-shadow            : 4px 6px 4px -2px rgba(0, 0, 0, 0.4);
+  text-decoration       : none;
+  font-family           : var(--sub-font);
+  -ms-flex-direction    : row;
+  flex-direction        : row;
 }
 
 .Headlines img {
@@ -210,10 +226,18 @@ nav > p {
   }
 
   .StockBoxContainer {
-    display         : flex;
-    align-content   : center;
-    flex-direction  : column;
-    justify-content : center;
+    display               : -webkit-box;
+    display               : flex;
+    display               : -ms-flexbox;
+    -webkit-box-direction : normal;
+    -webkit-box-orient    : vertical;
+    -webkit-box-pack      : center;
+    align-content         : center;
+    -ms-flex-direction    : column;
+    flex-direction        : column;
+    -ms-flex-line-pack    : center;
+    -ms-flex-pack         : center;
+    justify-content       : center;
   }
 
   .StockBox {
@@ -221,8 +245,6 @@ nav > p {
     min-height    : 50vh;
     max-height    : none;
     margin-bottom : 2em;
-    align-self    : center;
-    font-size     : 8px;
   }
 
   .Headlines {
